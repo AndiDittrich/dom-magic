@@ -10,12 +10,14 @@ Simple ES6 utilities to manipulate DOM
 * Add event listeners
 * Native ES6 module (requires babel/rollup to be used within browser)
 
-## Install ##
+## Installation ##
 
 ```bash
 $ npm install dom-magic --save
 $ yarn add dom-magic
 ```
+
+### ES6 Transpiler Setup ###
 
 File: `gulpfile.js`
 
@@ -72,6 +74,57 @@ File: `babel.config.json`
 ```
 
 ## Examples ##
+
+### JSX Component ###
+
+File: `button.jsx`
+
+```jsx
+// Internal "ReactDOM"
+import * as React from 'dom-magic';
+
+export function Button(props){
+
+    // button css classes
+    const classes = ['enlighter-btn'];
+
+    // name set ?
+    if (props.name){
+        classes.push('enlighter-btn-' + props.name);
+    }
+
+    // create button
+    return <div 
+            className={classes.join(' ')} 
+            onClick={props.onClick}
+        >
+            {props.text||null}
+        </div>
+}
+```
+
+### Transpiled JSX ###
+
+`createElement` is provided by **dom-magic**
+
+```js
+function Button(props) {
+    // button css classes
+    var classes = ['enlighter-btn']; // name set ?
+
+    if (props.name) {
+    classes.push('enlighter-btn-' + props.name);
+    } // create button
+
+
+    return createElement("div", {
+    className: classes.join(' '),
+    onClick: props.onClick
+    }, props.text || null);
+}
+```
+
+### Full Examples ###
 
 * [EnlighterJS](https://github.com/EnlighterJS/EnlighterJS)
 
