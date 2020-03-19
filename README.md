@@ -124,6 +124,25 @@ function Button(props) {
 }
 ```
 
+### Browser (abstract example) ###
+
+```js
+var domMagic = require('dom-magic');
+
+// get target container
+var targetEl = domMagic.getElement('#container-a');
+
+// create element
+var buttonEl = Button({
+    text: "hello world",
+    name: "test"
+});
+
+// inject
+domMagic.insertBefore(targetEl, buttonEl);
+```
+
+
 ### Full Examples ###
 
 * [EnlighterJS](https://github.com/EnlighterJS/EnlighterJS)
