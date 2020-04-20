@@ -12,3 +12,4 @@ export * from './lib/element';
 export * from './lib/create-element';
 export * from './lib/renderer';
 export * from './lib/styles';
+export * from './lib/debug';

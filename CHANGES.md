@@ -1,6 +1,10 @@
 
 ## Branch 1.0 ##
 
+### 1.1.0 ###
+
+* Added: wrappers `logInfo` and `logError` for `console.log`
+
 ### 1.0.0 ###
 
 * Initial Public Release
